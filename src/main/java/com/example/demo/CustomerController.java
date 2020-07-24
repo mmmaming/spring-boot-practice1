@@ -22,7 +22,6 @@ public class CustomerController {
         List<Customer> allCustomer = customerService.getAllCustomer();
 
         for (Customer customer : allCustomer) {
-            log.info("'*****************'");
             System.out.println(customer);
 
             log.info(customer.toString());
@@ -39,10 +38,10 @@ public class CustomerController {
 
     @PostMapping
     public Customer updateCustomer(@RequestBody UpdateRequest updateRequest) {
-        log.info("2222222222222222222");
         log.info(updateRequest.toString());
         Customer customer = customerService.findById(updateRequest.getId());
-        customer.setFirstName("July");
+        customer.setFirstName(updateRequest.getFirstName());
+        customer.setLastName(updateRequest.getLastName());
         return customerService.save(customer);
     }
 
