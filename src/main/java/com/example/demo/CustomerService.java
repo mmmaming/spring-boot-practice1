@@ -19,4 +19,17 @@ public class CustomerService {
         customerRepository.save(customer);
         return customer;
     }
+
+    public Customer update(Customer customer) {
+        customerRepository.save(customer);
+        return customer;
+    }
+
+    public Customer findById(long id) {
+        return customerRepository.findById(id);
+    }
+
+    public Customer findBy(String firstName, String lastName) {
+        return customerRepository.findByFirstNameAndLastName(firstName, lastName);
+    }
 }

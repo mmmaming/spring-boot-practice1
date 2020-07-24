@@ -9,4 +9,7 @@ public interface CustomerRepository extends CrudRepository<Customer, Long> {
     Customer findById(long id);
 
     Customer save(Customer customer);
+
+    Customer findByFirstNameAndLastName(String firstName, String lastName);
+
 }
