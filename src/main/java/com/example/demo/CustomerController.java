@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.hibernate.sql.Update;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +49,10 @@ public class CustomerController {
     @GetMapping("/name")
     public Customer findBy(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
         return customerService.findBy(firstName, lastName);
+    }
+
+    @DeleteMapping
+    public Customer deleteCustomer(@RequestBody UpdateRequest updateRequest) {
+        return customerService.deleteById(updateRequest.getId());
     }
 }

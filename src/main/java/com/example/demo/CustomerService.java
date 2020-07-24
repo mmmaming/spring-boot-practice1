@@ -32,4 +32,8 @@ public class CustomerService {
     public Customer findBy(String firstName, String lastName) {
         return customerRepository.findByFirstNameAndLastName(firstName, lastName);
     }
+
+    public Customer deleteById(long id) {
+        return customerRepository.deleteById(id);
+    }
 }

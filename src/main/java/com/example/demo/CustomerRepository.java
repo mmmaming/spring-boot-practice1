@@ -12,4 +12,5 @@ public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
     Customer findByFirstNameAndLastName(String firstName, String lastName);
 
+    Customer deleteById(long id);
 }
